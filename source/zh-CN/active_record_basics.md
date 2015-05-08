@@ -231,7 +231,7 @@ user.destroy
 
 在存入数据库之前，Active Record 还可以验证模型。模型验证有很多方法，可以检查属性值是否不为空、是否是唯一的，或者没有在数据库中出现过，等等。
 
-把数据存入数据库之前进行验证是十分重要的步骤，所以调用 `create`、`save`、`update` 这三个方法时会做数据验证，验证失败时返回 `false`，此时不会对数据库做任何操作。这三个方法都要对应的爆炸方法（`create!`，`save!`，`update!`），爆炸方法要严格一些，如果验证失败，会抛出 `ActiveRecord::RecordInvalid` 异常。下面是个简单的例子：
+把数据存入数据库之前进行验证是十分重要的步骤，所以调用 `create`、`save`、`update` 这三个方法时会做数据验证，验证失败时返回 `false`，此时不会对数据库做任何操作。这三个方法都有对应的爆炸方法（`create!`，`save!`，`update!`），爆炸方法要严格一些，如果验证失败，会抛出 `ActiveRecord::RecordInvalid` 异常。下面是个简单的例子：
 
 ```ruby
 class User < ActiveRecord::Base
